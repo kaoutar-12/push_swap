@@ -117,32 +117,16 @@ char	**ft_split(char const *s, char c)
 
 int main(int ac, char **av)
 {
-    int *stack_a;
-    int *stack_b;
-    char *str;
-    int capacity = 1;
-    int size = 0;
-    int i = 0;
-    int n = 0;
+	int len;
+	int i;
+	int *stack_a;
+	char *str = av[1];
+	char **split = ft_split(str, ' ');
 
-    char *splitted = ft_split(str, ' ');
-
-    str = av[1];
-    if (ac > 2)
-    {
-        stack_a = malloc(sizeof(int));
-        if (stack_a == NULL)
-            return (0);
-        stack_b = malloc(sizeof(int));
-        if (stack_b == NULL)
-            return (0);
-        while (splitted != NULL)
-        {
-            if (size == capacity)
-            {
-                
-            }
-        }
-        
-    }
+	while (*split != NULL)
+	{
+		len++;
+		split++;
+	}
+	stack_a [i++] = ft_atoi(split);
 }
