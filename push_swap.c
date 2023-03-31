@@ -117,7 +117,7 @@ char	**ft_split(char const *s, char c)
 
 int main(int ac, char **av)
 {
-	int len;
+	int len = 0;
 	int i;
 	int *stack_a;
 	char *str = av[1];
@@ -136,5 +136,4 @@ int main(int ac, char **av)
 	stack_a[i] = ft_atoi(split[i]);
 	i++;
 	}
-	printf("%p", (void *)stack_a);
 }
