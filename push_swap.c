@@ -128,5 +128,13 @@ int main(int ac, char **av)
 		len++;
 		split++;
 	}
-	stack_a [i++] = ft_atoi(split);
+	stack_a = malloc(sizeof(int) * len);
+	i = 0;
+	split = ft_split(str, ' ');
+	while(i < len)
+	{
+	stack_a[i] = ft_atoi(split[i]);
+	i++;
+	}
+	printf("%p", (void *)stack_a);
 }
