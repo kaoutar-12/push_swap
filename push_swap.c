@@ -115,6 +115,7 @@ char	**ft_split(char const *s, char c)
 	return (str);
 }
 
+
 int main(int ac, char **av)
 {
 	int len;
@@ -123,7 +124,7 @@ int main(int ac, char **av)
 	char *str;
 	char **split;
 
-	if (ac >= 2)
+	if (ac == 2)
 	{
 	len = 0;
 	str = av[1];
@@ -141,5 +142,9 @@ int main(int ac, char **av)
 	stack_a[i] = ft_atoi(split[i]);
 	i++;
 	}
+		printf("%d \n %d \n %d" ,stack_a[1], stack_a[2], stack_a[3] );
 	}
+	
+	else
+		printf("erroorrrr!!");
 }
