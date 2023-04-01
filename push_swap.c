@@ -117,12 +117,17 @@ char	**ft_split(char const *s, char c)
 
 int main(int ac, char **av)
 {
-	int len = 0;
+	int len;
 	int i;
 	int *stack_a;
-	char *str = av[1];
-	char **split = ft_split(str, ' ');
+	char *str;
+	char **split;
 
+	if (ac >= 2)
+	{
+	len = 0;
+	str = av[1];
+	split = ft_split(str, ' ');
 	while (*split != NULL)
 	{
 		len++;
@@ -135,5 +140,6 @@ int main(int ac, char **av)
 	{
 	stack_a[i] = ft_atoi(split[i]);
 	i++;
+	}
 	}
 }
