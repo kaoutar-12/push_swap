@@ -1,7 +1,4 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-
+#include "push_swap.h"
 static void	*ft_free(char **str, int i)
 {
 	while (i--)
@@ -86,38 +83,4 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	str = ft_fill(str, s, c);
 	return (str);
-}
-
-
-int main(int ac, char **av)
-{
-	int len;
-	int i;
-	int *stack_a;
-	char *str;
-	char **split;
-
-	if (ac == 2)
-	{
-	len = 0;
-	str = av[1];
-	split = ft_split(str, ' ');
-	while (*split != NULL)
-	{
-		len++;
-		split++;
-	}
-	stack_a = malloc(sizeof(int) * len);
-	i = 0;
-	split = ft_split(str, ' ');
-	while(i < len)
-	{
-	stack_a[i] = atoi(split[i]);
-	i++;
-	}
-		printf("%d \n %d \n %d" ,stack_a[1], stack_a[2], stack_a[3] );
-	}
-	
-	else
-		printf("erroorrrr!!");
 }
