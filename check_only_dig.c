@@ -1,13 +1,16 @@
 #include <unistd.h>
 
-int check_if_only_dig(char **av)
+int check_if_only_dig(char *av)
 {
-    int i = 0;
-    int sign = 1;
+    int i;
+    int sign;
+
+    i = 0;
+    sign = 1;
 
     if (av[i] == '-')
     {
-        sign = -1;
+        sign *= -1;
         i++;
     }
     else if (av[i] == '+')

@@ -6,7 +6,7 @@ FLAGS = -Wall -Wextra -Werror
 SRC = push_swap.c ft_split.c ft_atoi.c check_only_dig.c
 OBJ = ${SRC:.c=.o}
 
-NAME = push_swap.a
+NAME = push_swap.h
 
 all: ${NAME}
 
