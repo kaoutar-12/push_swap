@@ -1,29 +1,3 @@
-# CC = cc
-# CL = ar -rc
-# CN = rm -rf
-# FLAGS = -wall -wextra -werror
-# SRC = push_swap ft_split ft_atoi check_only_dig
-# OBJ = ${SRC=.o}
-
-# NAME = push_swap.a
-
-# all:${NAME}
-
-# ${NAME}:${OBJ}
-# 		${CL} ${NAME} ${OBJ}
-
-# %.o: %.c push_swap.h
-# 		${CC} ${FLAGS} -c $<
-# clean:
-# 		${CN} ${OBJ}
-# fclean: clean
-# 		${CN} ${NAME}
-
-# re : fclean all
-
-# .PHONY : all bonus clean fclean re
-
-
 
 CC = cc
 AR = ar -rc
