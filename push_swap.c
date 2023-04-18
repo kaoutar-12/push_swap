@@ -1,123 +1,53 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-static void	*ft_free(char **str, int i)
-{
-	while (i--)
-		free(str[i]);
-	free(str);
-	return (NULL);
-}
-
-static int	count_words(char const *s, char c)
-{
-	int	i;
-	int	j;
-	int	k;
-
-	i = 0;
-	j = 0;
-	k = 0;
-	while (s[i])
-	{
-		while (s[i] && s[i] == c)
-			i++;
-		while (s[i] && s[i] != c)
-		{
-			i++;
-			j++;
-		}
-		if (j > 0)
-		{
-			k++;
-			j = 0;
-		}
-	}
-	return (k);
-}
-
-static int	word_len(const char *s, char c)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	return (i);
-}
-
-char	**ft_fill(char **str, char const *s, char c)
-{
-	int		i;
-	int		j;
-	int		k;
-
-	i = 0;
-	j = 0;
-	k = 0;
-	while (s[i])
-	{
-		while (s[i] && s[i] == c)
-			i++;
-		if (s[i])
-		{
-			str[j] = malloc(sizeof(char) * (word_len(s + i, c) + 1));
-			if (!str[j])
-				return (ft_free(str, j));
-			while (s[i] != c && s[i])
-				str[j][k++] = s[i++];
-			str[j++][k] = '\0';
-			k = 0;
-		}
-	}
-	str[j] = 0;
-	return (str);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**str;
-
-	if (!s)
-		return (NULL);
-	str = malloc(sizeof(char *) * (count_words(s, c) + 1));
-	if (!str)
-		return (NULL);
-	str = ft_fill(str, s, c);
-	return (str);
-}
-
+#include "push_swap.h"
 
 int main(int ac, char **av)
 {
-	int len;
-	int i;
-	int *stack_a;
-	char *str;
-	char **split;
+    int len_a;
+    int i;
+    int *stack_a;
+    // int *stack_b;
+    char *str;
+    char **split;
 
-	if (ac == 2)
-	{
-	len = 0;
-	str = av[1];
-	split = ft_split(str, ' ');
-	while (*split != NULL)
-	{
-		len++;
-		split++;
-	}
-	stack_a = malloc(sizeof(int) * len);
-	i = 0;
-	split = ft_split(str, ' ');
-	while(i < len)
-	{
-	stack_a[i] = atoi(split[i]);
-	i++;
-	}
-		printf("%d \n %d \n %d" ,stack_a[1], stack_a[2], stack_a[3] );
-	}
-	
-	else
-		printf("erroorrrr!!");
+    if (ac >= 2)
+    {
+        str = join_arg(ac, av);
+        split = ft_split(str, ' ');
+        free(str);
+        len_a = 0;
+        while (split[len_a] != NULL)
+        {
+            if (!check_if_only_dig(split[len_a]))
+            {
+                printf("Error1");
+                exit(1);
+            }
+            len_a++;
+        }
+        stack_a = malloc(sizeof(int) * len_a);
+        if (stack_a == NULL)
+            return(0);
+        i = 0;
+        while(split[i] != NULL)
+        {
+            stack_a[i] = ft_atoi(split[i]);
+            i++;
+        }
+        if (!ft_check_sort_array(stack_a, len_a))
+        {
+            printf("Error2\n");
+            exit(1);
+        }
+        if (!ft_check_double(stack_a, len_a))
+        {
+            printf("Error3\n");
+            exit(1);
+        }
+    }
+    
+    else 
+    {
+        printf("Error4\n");
+        exit(1);
+    }
 }

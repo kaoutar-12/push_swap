@@ -1,27 +1,25 @@
-
 CC = cc
-AR = ar -rc
-RM = rm -rf
+CL = ar -rc
+CN = rm -rf
 FLAGS = -Wall -Wextra -Werror
-SRC = push_swap.c ft_split.c ft_atoi.c check_only_dig.c
+SRC = push_swap.c ft_atoi.c ft_split.c check_dig.c ft_strjoin.c join_arg.c ft_strlen.c dupicte.c check_sort.c ft_strdup.c\
+	  pa.c pb.c ra.c rb.c rra.c rrb.c sa.c sb.c
 OBJ = ${SRC:.c=.o}
 
-NAME = push_swap.a
+NAME = push_swap
 
-all: ${NAME}
+all:${NAME}
 
-${NAME}: ${OBJ}
-		${AR} ${NAME} ${OBJ}
+${NAME}:${OBJ}
+		${CL} ${NAME} ${OBJ} -o ${NAME}
 
-%.o: %.c push_swap.h
-		${CC} ${FLAGS} -c $< -o $@
+%.o:%.c push_swap.h
+		${CC} ${FLAGS} -c $<
 
 clean:
-		${RM} ${OBJ}
-
+		${CN} ${OBJ}
 fclean: clean
-		${RM} ${NAME}
-
+		${CN} ${NAME}
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
