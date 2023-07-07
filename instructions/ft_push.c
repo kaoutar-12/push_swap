@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_rot.c                                       :+:      :+:    :+:   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 18:57:01 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/07 19:31:39 by kmouradi         ###   ########.fr       */
+/*   Created: 2023/07/07 20:49:02 by kmouradi          #+#    #+#             */
+/*   Updated: 2023/07/07 21:07:39 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void ft_rev_rot(t_stack *stack)
+void ft_push(t_stack *stack1, t_stack *stack2)
 {
-	int i = 0;
-	while (stack->arr[i])
-	{
-		i++;
-	}
-	int tmp = stack->arr[i];
-	i = 0;
-	while (i < stack->top -1)
-	{
-		stack->arr[i + 1] = stack->arr[i];
-		i++;
-	}
-	stack->arr[stack->top] = tmp;
+	if (stack1->top == -1) return;
+	stack2->arr[++stack2->top] = stack1->arr[stack1->top--];
 }

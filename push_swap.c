@@ -1,19 +1,19 @@
 #include "push_swap.h"
 
-int main(int ac, char **av)
+int *parsing(int ac, char **av)
 {
     int len_a;
     int i;
-    int *stack_a;
-    // int *stack_b;
+    int *arr;
     char *str;
     char **split;
 
     if (ac >= 2)
     {
         str = join_arg(ac, av);
-        split = ft_split(str, ' ');
+        system("leaks push_swap");
         free(str);
+        split = ft_split(str, ' ');
         len_a = 0;
         while (split[len_a] != NULL)
         {
@@ -24,30 +24,59 @@ int main(int ac, char **av)
             }
             len_a++;
         }
-        stack_a = malloc(sizeof(int) * len_a);
-        if (stack_a == NULL)
+        arr = malloc(sizeof(int) * len_a);
+        if (arr == NULL)
             return(0);
         i = 0;
         while(split[i] != NULL)
         {
-            stack_a[i] = ft_atoi(split[i]);
+            arr[i] = ft_atoi(split[i]);
             i++;
         }
-        if (!ft_check_sort_array(stack_a, len_a))
+        if (!ft_check_sort_array(arr, len_a))
         {
             printf("Error2\n");
             exit(1);
         }
-        if (!ft_check_double(stack_a, len_a))
+        if (!ft_check_double(arr, len_a))
         {
             printf("Error3\n");
             exit(1);
         }
     }
-
     else
     {
         printf("Error4\n");
         exit(1);
     }
+        int	j;
+
+        j = 0;
+        while (split[j])
+        {
+            free(split[j]);
+            j++;
+        }
+	free (split);
+    return (arr);
+}
+int main(int ac, char **av)
+{
+   int *arr = parsing(ac,av);
+   int i = 0;
+   while(arr[i])
+   {
+    printf("%d\n",arr[i]);
+    i++;
+   }
+//    int	j;
+
+// 	j = 0;
+// 	while (arr[j])
+// 	{
+// 		free(arr[j]);
+// 		j++;
+// 	}
+	free (arr);
+
 }
