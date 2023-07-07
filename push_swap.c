@@ -19,7 +19,7 @@ int main(int ac, char **av)
         {
             if (!check_if_only_dig(split[len_a]))
             {
-                printf("Error1");
+                printf("Error1\n");
                 exit(1);
             }
             len_a++;
@@ -44,8 +44,8 @@ int main(int ac, char **av)
             exit(1);
         }
     }
-    
-    else 
+
+    else
     {
         printf("Error4\n");
         exit(1);

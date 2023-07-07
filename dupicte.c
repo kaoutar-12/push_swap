@@ -10,7 +10,6 @@ int ft_check_double(int *stack_a, int len_a)
         {
             if (stack_a[i] == stack_a[j])
             {
-                printf("Error\n");
                 return 0;
             }
             j++;
@@ -19,4 +18,3 @@ int ft_check_double(int *stack_a, int len_a)
     }
     return 1;
 }
- 

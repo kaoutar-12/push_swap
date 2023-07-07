@@ -1,25 +1,51 @@
-CC = cc
-CL = ar -rc
-CN = rm -rf
-FLAGS = -Wall -Wextra -Werror
-SRC = push_swap.c ft_atoi.c ft_split.c check_dig.c ft_strjoin.c join_arg.c ft_strlen.c dupicte.c check_sort.c ft_strdup.c\
-	  pa.c pb.c ra.c rb.c rra.c rrb.c sa.c sb.c
-OBJ = ${SRC:.c=.o}
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/07/07 17:19:46 by kmouradi          #+#    #+#              #
+#    Updated: 2023/07/07 18:11:16 by kmouradi         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
+CC = cc
+CN = rm -rf
+FLAGS = -Wall -Wextra -Werror -g
+SOURCE = push_swap.c check_dig.c check_sort.c dupicte.c join_arg.c \
+		instructions/ft_swap.c
+LIBFT_DIR = libft
+FTPRINTF_DIR = ft_printf
+LIBFT = $(LIBFT_DIR)/libft.a
+FTPRINTF = $(FTPRINTF_DIR)/libftprintf.a
+OBJECT = $(SOURCE:.c=.o)
 NAME = push_swap
 
-all:${NAME}
+.PHONY: all clean fclean re
 
-${NAME}:${OBJ}
-		${CL} ${NAME} ${OBJ} -o ${NAME}
+all: $(NAME)
 
-%.o:%.c push_swap.h
-		${CC} ${FLAGS} -c $<
+$(NAME): $(OBJECT) $(LIBFT) $(FTPRINTF)
+	$(CC) $(FLAGS) $(OBJECT) $(LIBFT) $(FTPRINTF) -o $(NAME)
+
+%.o: %.c push_swap.h
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-		${CN} ${OBJ}
+	$(MAKE) -C $(LIBFT_DIR) clean
+	$(MAKE) -C $(FTPRINTF_DIR) clean
+	$(RM) $(OBJECT)
+
 fclean: clean
-		${CN} ${NAME}
+	$(MAKE) -C $(LIBFT_DIR) fclean
+	$(MAKE) -C $(FTPRINTF_DIR) fclean
+	$(RM) $(NAME)
+
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+$(LIBFT):
+	$(MAKE) -C $(LIBFT_DIR)
+
+$(FTPRINTF):
+	$(MAKE) -C $(FTPRINTF_DIR)
