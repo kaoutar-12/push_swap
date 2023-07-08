@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 18:57:01 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/07 19:31:39 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/08 12:04:19 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,23 @@
 
 void ft_rev_rot(t_stack *stack)
 {
+	int tmp = stack->arr[0];
 	int i = 0;
-	while (stack->arr[i])
+	while(i <= stack->top)
 	{
-		i++;
-	}
-	int tmp = stack->arr[i];
-	i = 0;
-	while (i < stack->top -1)
-	{
-		stack->arr[i + 1] = stack->arr[i];
+		stack->arr[i] = stack->arr[i + 1];
 		i++;
 	}
 	stack->arr[stack->top] = tmp;
+}
+void ft_rra(t_stack *stack_a)
+{
+	ft_printf("rra\n");
+	ft_rev_rot(stack_a);
+}
+
+void ft_rrb(t_stack *stack_b)
+{
+	ft_printf("rrb\n");
+	ft_rev_rot(stack_b);
 }

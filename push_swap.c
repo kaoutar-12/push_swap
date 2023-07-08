@@ -11,9 +11,8 @@ int *parsing(int ac, char **av)
     if (ac >= 2)
     {
         str = join_arg(ac, av);
-        system("leaks push_swap");
-        free(str);
         split = ft_split(str, ' ');
+        free(str);
         len_a = 0;
         while (split[len_a] != NULL)
         {
@@ -60,23 +59,31 @@ int *parsing(int ac, char **av)
 	free (split);
     return (arr);
 }
+int arr_len(int *arr)
+{
+    int i = 0;
+    while(arr[i])
+    {
+        i++;
+    }
+    return (i);
+}
 int main(int ac, char **av)
 {
    int *arr = parsing(ac,av);
-   int i = 0;
-   while(arr[i])
+    int len_arr = arr_len(arr);
+    t_stack *stack = creatstack(len_arr);
+    int i = len_arr - 1;
+    while(i >= 0)
+    {
+       fill_stack(stack, arr[i]);
+       i--;
+    }
+    ft_sort3(stack);
+     i = arr_len(arr) - 1;
+   while(i >= 0)
    {
-    printf("%d\n",arr[i]);
-    i++;
+    printf("%d\n",stack->arr[i]);
+    i--;
    }
-//    int	j;
-
-// 	j = 0;
-// 	while (arr[j])
-// 	{
-// 		free(arr[j]);
-// 		j++;
-// 	}
-	free (arr);
-
 }

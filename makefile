@@ -6,7 +6,7 @@
 #    By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 17:19:46 by kmouradi          #+#    #+#              #
-#    Updated: 2023/07/07 18:11:16 by kmouradi         ###   ########.fr        #
+#    Updated: 2023/07/08 14:14:11 by kmouradi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ CC = cc
 CN = rm -rf
 FLAGS = -Wall -Wextra -Werror -g
 SOURCE = push_swap.c check_dig.c check_sort.c dupicte.c join_arg.c \
-		instructions/ft_swap.c
+		instructions/ft_swap.c ft_fill.c instructions/ft_push.c instructions/ft_rev_rot.c instructions/ft_rot.c \
+		mini_sort/ft_sort3.c
 LIBFT_DIR = libft
 FTPRINTF_DIR = ft_printf
 LIBFT = $(LIBFT_DIR)/libft.a

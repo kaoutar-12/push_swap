@@ -23,4 +23,20 @@ char *join_arg(int ac, char **av);
 void ft_swap(t_stack *stack);
 void ft_sa(t_stack *stack_a);
 void ft_sb(t_stack *stack_b);
+t_stack *creatstack(unsigned int arr_len);
+int is_full(t_stack *stack);
+int is_empty(t_stack *stack);
+void fill_stack(t_stack *stack, int number);
+void ft_push(t_stack *stack1, t_stack *stack2);
+void ft_pb(t_stack *stack_a,t_stack *stack_b);
+void ft_pa(t_stack *stack_b,t_stack *stack_a);
+void ft_rev_rot(t_stack *stack);
+void ft_rot(t_stack *stack);
+void ft_rev_rot(t_stack *stack);
+void ft_ra(t_stack *stack_a);
+void ft_rb(t_stack *stack_b);
+void ft_rra(t_stack *stack_a);
+void ft_rrb(t_stack *stack_b);
+void ft_sort3(t_stack *stack);
+
 #endif
