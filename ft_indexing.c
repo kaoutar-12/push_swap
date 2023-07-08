@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_dig.c                                        :+:      :+:    :+:   */
+/*   ft_indexing.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/08 14:41:48 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/08 14:41:49 by kmouradi         ###   ########.fr       */
+/*   Created: 2023/07/08 18:48:56 by kmouradi          #+#    #+#             */
+/*   Updated: 2023/07/08 19:38:17 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
-
-int check_if_only_dig(char *stack_a)
+void find_position(t_stack *stack)
 {
-    int i;
-    int sign;
-
-    i = 0;
-    sign = 1;
-
-    if (stack_a[i] == '-')
-    {
-        sign *= -1;
-        i++;
-    }
-    else if (stack_a[i] == '+')
-    {
-        i++;
-    }
-    while(stack_a[i])
-    {
-        if (stack_a[i] < '0' || stack_a[i] > '9')
-        {
-            return (0);
-        }
-        i++;
-    }
-    return (1);
+	int *arr_clone = malloc(stack->size * sizeof(int));
+	printf("size==>%d\n",stack->size);
+	int i = stack->size;
+	while(i)
+	{
+		arr_clone[i] = stack->arr[i];
+		i++;
+	}
+	i =stack->top;
+	while(arr_clone[i])
+	{
+		printf("clone %d\n",arr_clone[i]);
+		i--;
+	}
 }

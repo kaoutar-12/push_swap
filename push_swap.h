@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/08 14:41:26 by kmouradi          #+#    #+#             */
+/*   Updated: 2023/07/08 19:29:58 by kmouradi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <stdio.h>
@@ -38,5 +51,10 @@ void ft_rb(t_stack *stack_b);
 void ft_rra(t_stack *stack_a);
 void ft_rrb(t_stack *stack_b);
 void ft_sort3(t_stack *stack);
-
+int ft_find_min_indice(t_stack *stack);
+int ft_find_min_value(t_stack *stack);
+void find_min(t_stack *stack_a, t_stack *stack_b);
+void ft_sort4(t_stack *stack_a, t_stack *stack_b);
+void ft_sort5(t_stack *stack_a, t_stack *stack_b);
+void find_position(t_stack *stack);
 #endif

@@ -1,6 +1,28 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/08 14:41:19 by kmouradi          #+#    #+#             */
+/*   Updated: 2023/07/08 19:30:41 by kmouradi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int *parsing(int ac, char **av)
+
+#include "push_swap.h"
+int arr_len(char **arr)
+{
+    int i = 0;
+    while(arr[i])
+    {
+        i++;
+    }
+    return (i);
+}
+
+int *parsing(int ac, char **av, int *len_arr)
 {
     int len_a;
     int i;
@@ -48,6 +70,7 @@ int *parsing(int ac, char **av)
         printf("Error4\n");
         exit(1);
     }
+    *len_arr = arr_len(split);
         int	j;
 
         j = 0;
@@ -59,31 +82,33 @@ int *parsing(int ac, char **av)
 	free (split);
     return (arr);
 }
-int arr_len(int *arr)
-{
-    int i = 0;
-    while(arr[i])
-    {
-        i++;
-    }
-    return (i);
-}
 int main(int ac, char **av)
 {
-   int *arr = parsing(ac,av);
-    int len_arr = arr_len(arr);
-    t_stack *stack = creatstack(len_arr);
+    int len_arr;
+   int *arr = parsing(ac,av, &len_arr);
+    t_stack *stack_a = creatstack(len_arr);
+    t_stack *stack_b = creatstack(len_arr);
     int i = len_arr - 1;
     while(i >= 0)
     {
-       fill_stack(stack, arr[i]);
+       fill_stack(stack_a, arr[i]);
        i--;
     }
-    ft_sort3(stack);
-     i = arr_len(arr) - 1;
+    find_position(stack_a);
+        // ft_push(stack_a,stack_b);
+     i = stack_a->top;
+    //  printf("\\%d\\|\n",len_arr);
+    printf("---------------\n");
    while(i >= 0)
    {
-    printf("%d\n",stack->arr[i]);
+    printf("%d\n",stack_a->arr[i]);
     i--;
    }
+   printf("-------------\n");
+   i = stack_b->top;
+    while(i >= 0)
+    {
+    printf("%d\n",stack_b->arr[i]);
+    i--;
+    }
 }

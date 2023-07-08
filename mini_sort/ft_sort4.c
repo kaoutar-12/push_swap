@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort5.c                                         :+:      :+:    :+:   */
+/*   ft_sort4.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/08 17:42:59 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/08 18:26:39 by kmouradi         ###   ########.fr       */
+/*   Created: 2023/07/08 14:41:13 by kmouradi          #+#    #+#             */
+/*   Updated: 2023/07/08 18:13:42 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void find_min5(t_stack *stack_a, t_stack *stack_b)
+void find_min(t_stack *stack_a, t_stack *stack_b)
 {
 	if (ft_find_min_value(stack_a) == stack_a->arr[stack_a->top])
 		ft_pb(stack_a, stack_b);
@@ -27,23 +26,17 @@ void find_min5(t_stack *stack_a, t_stack *stack_b)
 		ft_ra(stack_a);
 		ft_pb(stack_a,stack_b);
 	}
-	if (ft_find_min_value(stack_a) == stack_a->arr[stack_a->top - 3])
-	{
-		ft_rra(stack_a);
-		ft_rra(stack_a);
-		ft_pb(stack_a,stack_b);
-	}
-	if (ft_find_min_value(stack_a) == stack_a->arr[stack_a->top - 4])
-	{
+	 if (ft_find_min_value(stack_a) == stack_a->arr[stack_a->top - 3])
+	 {
 		ft_rra(stack_a);
 		ft_pb(stack_a,stack_b);
-	}
+	 }
 }
-void ft_sort5(t_stack *stack_a, t_stack *stack_b)
-{
-	find_min5(stack_a,stack_b);
-	ft_sort4(stack_a,stack_b);
-	ft_pa(stack_b,stack_a);
-	ft_pa(stack_b,stack_a);
 
+void ft_sort4(t_stack *stack_a, t_stack *stack_b)
+{
+	find_min(stack_a,stack_b);
+	// printf("min%d\n",ft_find_min_value(stack_a));
+	ft_sort3(stack_a);
+	ft_pa(stack_b,stack_a);
 }
