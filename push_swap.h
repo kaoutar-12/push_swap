@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:41:26 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/09 14:46:58 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/09 19:38:29 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void find_min(t_stack *stack_a, t_stack *stack_b);
 void ft_sort4(t_stack *stack_a, t_stack *stack_b);
 void ft_sort5(t_stack *stack_a, t_stack *stack_b);
 int * find_position(t_stack *stack);
-// int *longest_list(int *arr);
 void sort_100(t_stack *stack_a,t_stack *stack_b);
+void push_to_a(t_stack *a,t_stack *b);
+void ft_sort(t_stack *stack_a,t_stack *stack_b);
 #endif

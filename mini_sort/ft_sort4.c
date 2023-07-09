@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:41:13 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/08 18:13:42 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/09 18:39:56 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void find_min(t_stack *stack_a, t_stack *stack_b)
 void ft_sort4(t_stack *stack_a, t_stack *stack_b)
 {
 	find_min(stack_a,stack_b);
-	// printf("min%d\n",ft_find_min_value(stack_a));
 	ft_sort3(stack_a);
 	ft_pa(stack_b,stack_a);
 }

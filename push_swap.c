@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:41:19 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/09 15:52:17 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/09 19:48:00 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,18 +102,19 @@ int main(int ac, char **av)
     sort_100(stack_a,stack_b);
     // ft_ra(stack_a);
     // ft_ra(stack_a);
- i = stack_a->top;
-    printf("---------------\n");
-   while(i >= 0)
-   {
-    printf("%d\n",stack_a->arr[i]);
-    i--;
-   }
-   printf("-------------\n");
-   i = stack_b->top;
-    while(i >= 0)
-    {
-    printf("%d\n",stack_b->arr[i]);
-    i--;
-    }
+//     i = stack_a->top;
+//     printf("{%d}\n",stack_a->top);
+//     printf("---------------\n");
+//    while(i >= 0)
+//    {
+//     printf("%d\n",stack_a->arr[i]);
+//     i--;
+//    }
+//    printf("-------------\n");
+//    i = stack_b->top;
+//     while(i >= 0)
+//     {
+//     printf("%d\n",stack_b->arr[i]);
+//     i--;
+//     }
 }

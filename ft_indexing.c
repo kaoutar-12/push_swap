@@ -6,26 +6,48 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 18:48:56 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/09 15:52:44 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/09 19:38:15 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+int find_max_index(t_stack *s,int val)
+{
+	int i = s->top;
 
+	while (i >= 0)
+	{
+		if(s->arr[i] == val)
+			return i;
+		i--;
+	}
+	return i;
+}
 int indexof(int *arr,int val)
 {
 	int i = 0;
 	while(val != arr[i])
 	{
 		i++;
-		// printf("%d\n",i);
 	}
 	return i;
+}
+int findmax(t_stack *stack)
+{
+	int max = stack->arr[stack->top];
+	int i = stack->top;
+
+	while(i >= 0)
+	{
+		if(max < stack->arr[i])
+			max = stack->arr[i];
+		i--;
+	}
+	return max;
 }
 int * find_position(t_stack *stack)
 {
 	int *arr_clone = malloc(stack->size * sizeof(int));
-	printf("size==>%d\n",stack->size);
 	int i = 0;
 	while(i <= stack->size)
 	{
@@ -49,55 +71,82 @@ int * find_position(t_stack *stack)
 		}
 		j++;
 	}
-	// i = 0;
-	// while(i < stack->size)
-	// {
-	// 	stack->arr_index[i] = indexof(arr_clone,stack->arr[i]);
-	// 	i++;
-	// }
 	return arr_clone;
 }
+void push_to_a(t_stack *a,t_stack *b)
+{
+	while (1)
+	{
+		int max = findmax(b);
+		int index = find_max_index(b,max);
+		while (b->arr[b->top] != max)
+		{
+			if(index >= b->top / 2)
+				ft_rb(b);
+			else
+				ft_rrb(b);
+		}
+		ft_pa(b,a);
+		if(b->top == -1)
+			break;
+	}
 
+}
 
 void sort_100(t_stack *stack_a,t_stack *stack_b)
 {
 	int *arr_clone = find_position(stack_a);
 	int i = 0;
-	// puts("------------------------------------");
-	while(i < stack_a->size)
-	{
-		printf("number: %d and index %d\n",stack_a->arr[i],indexof(arr_clone,stack_a->arr[i]));
-		i++;
-	}
 	int j = 0;
 	 i = -1;
-	while(stack_a->top > 1)
+	while(stack_a->top != 0)
 	{
-	    i = i + stack_a->size / 5;//2
+	    i = i + stack_a->size / 5;
 		j = stack_a->top;
-		printf("top  = %d",j);
 		while(j)
 		{
-			printf("i === %d\n",i);
-			printf("j ==== %d\n",j);
-			if(indexof(arr_clone,stack_a->arr[stack_a->top]) <= i)
+			if(indexof(arr_clone,stack_a->arr[stack_a->top]) <= i )
 			{
-				printf("stack a num: %d\n",stack_a->arr[stack_a->top]);
-				printf("stack a index: %d\n",indexof(arr_clone,stack_a->arr[stack_a->top]));
 			 	ft_pb(stack_a,stack_b);
 			}
 			else
 			{
-				printf("rot stack a num: %d\n",stack_a->arr[stack_a->top]);
-				printf("rot stack a index: %d\n",indexof(arr_clone,stack_a->arr[stack_a->top]));
 				ft_ra(stack_a);
-				// continue;
 			}
 			j--;
 		}
-	// int k = 0;
 
-	// exit(0);
 	}
-	printf("size of b %d\n",stack_b->top);
+	ft_pb(stack_a,stack_b);
+	push_to_a(stack_a,stack_b);
 }
+
+void ft_sort(t_stack *stack_a,t_stack *stack_b)
+{
+	int *arr_clone = find_position(stack_a);
+	int i = 0;
+	int j = 0;
+	 i = -1;
+	while(stack_a->top != 0)
+	{
+	    i = i + stack_a->size / 9;
+		j = stack_a->top;
+		while(j)
+		{
+			if(indexof(arr_clone,stack_a->arr[stack_a->top]) <= i )
+			{
+			 	ft_pb(stack_a,stack_b);
+			}
+			else
+			{
+				ft_ra(stack_a);
+			}
+			j--;
+		}
+
+	}
+	ft_pb(stack_a,stack_b);
+	push_to_a(stack_a,stack_b);
+
+}
+

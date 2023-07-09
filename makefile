@@ -6,7 +6,7 @@
 #    By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 17:19:46 by kmouradi          #+#    #+#              #
-#    Updated: 2023/07/09 13:21:52 by kmouradi         ###   ########.fr        #
+#    Updated: 2023/07/09 18:51:58 by kmouradi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CN = rm -rf
 FLAGS = -Wall -Wextra -Werror -g
 SOURCE = push_swap.c check_dig.c check_sort.c dupicte.c join_arg.c \
 		instructions/ft_swap.c ft_fill.c instructions/ft_push.c instructions/ft_rev_rot.c instructions/ft_rot.c \
-		mini_sort/ft_sort3.c mini_sort/find_min.c mini_sort/ft_sort4.c mini_sort/ft_sort5.c ft_indexing.c longest_list.c
+		mini_sort/ft_sort3.c mini_sort/find_min.c mini_sort/ft_sort4.c mini_sort/ft_sort5.c ft_indexing.c 
 LIBFT_DIR = libft
 FTPRINTF_DIR = ft_printf
 LIBFT = $(LIBFT_DIR)/libft.a
