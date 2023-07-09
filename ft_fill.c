@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 08:20:35 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/08 09:53:02 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/09 13:37:12 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_stack *creatstack(unsigned int arr_len)
 	stack->size = arr_len;
 	stack->top = -1;
 	stack->arr = (int*)malloc(stack->size * sizeof(int));
+	stack->arr_index =  (int*)malloc(stack->size * sizeof(int));
 	if (stack->arr == NULL)
 		return 0;
 	return (stack);

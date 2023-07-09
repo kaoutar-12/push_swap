@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:41:19 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/08 19:30:41 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/09 15:52:17 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ int main(int ac, char **av)
 {
     int len_arr;
    int *arr = parsing(ac,av, &len_arr);
+
     t_stack *stack_a = creatstack(len_arr);
     t_stack *stack_b = creatstack(len_arr);
     int i = len_arr - 1;
@@ -94,10 +95,14 @@ int main(int ac, char **av)
        fill_stack(stack_a, arr[i]);
        i--;
     }
-    find_position(stack_a);
-        // ft_push(stack_a,stack_b);
+    // // ft_push(stack_a,stack_b);
      i = stack_a->top;
-    //  printf("\\%d\\|\n",len_arr);
+    // //  printf("\\%d\\|\n",len_arr);
+    // find_position(stack_a);
+    sort_100(stack_a,stack_b);
+    // ft_ra(stack_a);
+    // ft_ra(stack_a);
+ i = stack_a->top;
     printf("---------------\n");
    while(i >= 0)
    {

@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:41:26 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/08 19:29:58 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/09 14:46:58 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 
 typedef struct s_stack{
 	int	*arr;
+	int *arr_index;
 	int	top;
 	int	size;
 } t_stack;
@@ -56,5 +57,7 @@ int ft_find_min_value(t_stack *stack);
 void find_min(t_stack *stack_a, t_stack *stack_b);
 void ft_sort4(t_stack *stack_a, t_stack *stack_b);
 void ft_sort5(t_stack *stack_a, t_stack *stack_b);
-void find_position(t_stack *stack);
+int * find_position(t_stack *stack);
+// int *longest_list(int *arr);
+void sort_100(t_stack *stack_a,t_stack *stack_b);
 #endif
