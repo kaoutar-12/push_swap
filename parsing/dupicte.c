@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_sort.c                                       :+:      :+:    :+:   */
+/*   dupicte.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/08 09:56:46 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/10 11:43:37 by kmouradi         ###   ########.fr       */
+/*   Created: 2023/07/08 14:41:40 by kmouradi          #+#    #+#             */
+/*   Updated: 2023/07/10 14:30:17 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	ft_check_sort_array(int *stack_a, int len_a)
+int	ft_check_double(int *stack_a, int len_a)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (i < len_a - 1)
+	while (i < len_a)
 	{
-		if (stack_a[i] > stack_a[i + 1])
-			return (1);
+		j = i + 1;
+		while (j < len_a)
+		{
+			if (stack_a[i] == stack_a[j])
+			{
+				return (0);
+			}
+			j++;
+		}
 		i++;
 	}
-	return (0);
+	return (1);
 }

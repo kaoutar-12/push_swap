@@ -6,11 +6,11 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 18:48:56 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/10 14:26:00 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/10 14:30:04 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	find_max_index(t_stack *s, int val)
 {

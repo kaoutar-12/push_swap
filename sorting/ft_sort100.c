@@ -6,11 +6,11 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 07:26:55 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/10 09:10:18 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/10 14:29:39 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_sort_100(t_stack *stack_a, t_stack *stack_b)
 {

@@ -6,11 +6,11 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 08:20:35 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/10 10:53:05 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/10 14:30:09 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 t_stack	*creatstack(unsigned int arr_len)
 {

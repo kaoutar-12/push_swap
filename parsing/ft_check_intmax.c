@@ -6,11 +6,11 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 10:16:34 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/10 13:38:09 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/10 14:30:13 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_check_intmax(char *arr)
 {

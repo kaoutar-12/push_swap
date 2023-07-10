@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_dig.c                                        :+:      :+:    :+:   */
+/*   join_arg.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/08 14:41:48 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/09 20:53:31 by kmouradi         ###   ########.fr       */
+/*   Created: 2023/07/08 14:41:36 by kmouradi          #+#    #+#             */
+/*   Updated: 2023/07/10 14:29:59 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	check_if_only_dig(char *stack_a)
+char	*join_arg(int ac, char **av)
 {
-	int	i;
-	int	sign;
+	char	*new_av;
+	int		i;
 
-	i = 0;
-	sign = 1;
-	if (stack_a[i] == '-')
+	i = 1;
+	new_av = ft_strdup("");
+	while (i < ac)
 	{
-		sign *= -1;
+		new_av = ft_strjoin(new_av, av[i]);
+		if (i != ac -1)
+			new_av = ft_strjoin(new_av, " ");
 		i++;
 	}
-	else if (stack_a[i] == '+')
-	{
-		i++;
-	}
-	while (stack_a[i])
-	{
-		if (stack_a[i] < '0' || stack_a[i] > '9')
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
+	return (new_av);
 }
