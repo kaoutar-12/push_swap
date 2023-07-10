@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:41:26 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/10 14:26:42 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/10 18:00:38 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,6 @@ void	ft_sort2(t_stack *stack_a);
 void	print_error(void);
 int		ft_check_intmax(char *arr);
 void	ft_swap_index(int *a, int *b);
+void	print_error(void);
 
 #endif

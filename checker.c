@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 17:23:24 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/10 17:46:17 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/10 18:01:11 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,24 @@ int	ft_checker(t_stack *stack)
 
 void	check_move(t_stack *stack_a, t_stack *stack_b, char *move)
 {
-	if ()
+	if (ft_strcmp(move, "sa\n") == 0)
+		ft_sa(stack_a);
+	else if (ft_strcmp(move, "sb\n") == 0)
+		ft_sb(stack_b);
+	else if (ft_strcmp(move, "ra\n") == 0)
+		ft_ra(stack_a);
+	else if (ft_strcmp(move, "rb\n") == 0)
+		ft_rb(stack_b);
+	else if (ft_strcmp(move, "rra\n") == 0)
+		ft_rra(stack_a);
+	else if (ft_strcmp(move, "rrb\n") == 0)
+		ft_rrb(stack_b);
+	else if (ft_strcmp(move, "pa\n") == 0)
+		ft_pa(stack_b, stack_a);
+	else if (ft_strcmp(move, "pb\n") == 0)
+		ft_pb(stack_a, stack_b);
+	else
+		print_error();
 }
 
 int	main(int ac, char **av)
