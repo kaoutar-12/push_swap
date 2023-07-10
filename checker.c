@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 07:23:03 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/10 17:25:14 by kmouradi         ###   ########.fr       */
+/*   Created: 2023/07/10 17:23:24 by kmouradi          #+#    #+#             */
+/*   Updated: 2023/07/10 17:46:17 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort(t_stack *stack_a, t_stack *stack_b)
+int	ft_checker(t_stack *stack)
 {
-	if (stack_a->size == 2)
-		ft_sort2(stack_a);
-	else if (stack_a->size == 3)
-		ft_sort3(stack_a);
-	else if (stack_a->size == 4)
-		ft_sort4(stack_a, stack_b);
-	else if (stack_a->size == 5)
-		ft_sort5(stack_a, stack_b);
-	else if (stack_a->size <= 100)
-		ft_sort_100(stack_a, stack_b);
-	else if (stack_a->size > 100)
-		ft_sort500(stack_a, stack_b);
-	free (stack_a->arr);
-	free (stack_a);
-	free (stack_b->arr);
-	free (stack_b);
+	int i;
+
+	i = stack->top;
+	while (i > 0)
+	{
+		if (stack->arr[i] > stack->arr[i + 1])
+			return(1);
+		i--;
+	}
+	return (0);
+}
+
+void	check_move(t_stack *stack_a, t_stack *stack_b, char *move)
+{
+	if ()
 }
 
 int	main(int ac, char **av)
@@ -51,11 +50,13 @@ int	main(int ac, char **av)
 			fill_stack(stack_a, arr[i]);
 			i--;
 		}
-		ft_sort(stack_a, stack_b);
-		free(arr);
+		while(1)
+		{
+
+		}
+		if (ft_checker(stack_a) == 1)
+			printf("OK\n");
+		else
+			printf("KO\n");
 	}
-	else
-		print_error();
-
 }
-
