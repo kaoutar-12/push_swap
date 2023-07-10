@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 18:38:03 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/09 20:36:48 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/10 18:17:01 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,12 @@ void	ft_ra(t_stack *stack_a)
 void	ft_rb(t_stack *stack_b)
 {
 	ft_printf("rb\n");
+	ft_rot(stack_b);
+}
+
+void ft_rr(t_stack *stack_a, t_stack *stack_b)
+{
+	ft_printf("rr\n");
+	ft_rot(stack_a);
 	ft_rot(stack_b);
 }
