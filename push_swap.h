@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:41:26 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/09 21:31:25 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/10 11:16:29 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 # include <fcntl.h>
 # include <ctype.h>
 # include <string.h>
+# include <limits.h>
 # include "libft/libft.h"
 # include "ft_printf/ft_printf.h"
 
 typedef struct s_stack{
 	int	*arr;
-	int	*arr_index;
 	int	top;
 	int	size;
 }	t_stack;
@@ -49,14 +49,24 @@ void	ft_ra(t_stack *stack_a);
 void	ft_rb(t_stack *stack_b);
 void	ft_rra(t_stack *stack_a);
 void	ft_rrb(t_stack *stack_b);
-void	ft_sort3(t_stack *stack);
+void	ft_sort3(t_stack *stack_a);
 int		ft_find_min_indice(t_stack *stack);
 int		ft_find_min_value(t_stack *stack);
 void	find_min(t_stack *stack_a, t_stack *stack_b);
 void	ft_sort4(t_stack *stack_a, t_stack *stack_b);
 void	ft_sort5(t_stack *stack_a, t_stack *stack_b);
 int		*find_position(t_stack *stack);
-void	sort_100(t_stack *stack_a, t_stack *stack_b);
+void	ft_sort_100(t_stack *stack_a, t_stack *stack_b);
 void	push_to_a(t_stack *a, t_stack *b);
-void	ft_sort(t_stack *stack_a, t_stack *stack_b);
+void	ft_sort500(t_stack *stack_a, t_stack *stack_b);
+int		*parsing(int ac, char **av, int *len_arr);
+int		find_max_index(t_stack *s, int val);
+int		indexof(int *arr, int val);
+int		findmax(t_stack *stack);
+int		*find_position(t_stack *stack);
+void	push_to_a(t_stack *a, t_stack *b);
+void	ft_sort2(t_stack *stack_a);
+int		ft_check_intmax(int *arr, int len);
+void	print_error(void);
+
 #endif

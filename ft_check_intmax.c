@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_sort.c                                       :+:      :+:    :+:   */
+/*   ft_check_intmax.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/08 09:56:46 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/10 11:43:37 by kmouradi         ###   ########.fr       */
+/*   Created: 2023/07/10 10:16:34 by kmouradi          #+#    #+#             */
+/*   Updated: 2023/07/10 10:28:03 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_sort_array(int *stack_a, int len_a)
+int	ft_check_intmax(int *arr, int len)
 {
 	int	i;
+	int	max;
 
 	i = 0;
-	while (i < len_a - 1)
+	max = INT_MAX;
+	while (i < len - 1)
 	{
-		if (stack_a[i] > stack_a[i + 1])
+		if (arr[i] > max)
 			return (1);
 		i++;
 	}

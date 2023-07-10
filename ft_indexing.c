@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 18:48:56 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/09 21:28:28 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/10 11:26:31 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,15 @@ int	findmax(t_stack *stack)
 	return (max);
 }
 
+void	ft_swap_index(int *a, int *b)
+{
+	int	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
 int	*find_position(t_stack *stack)
 {
 	int	*arr_clone;
@@ -61,6 +70,7 @@ int	*find_position(t_stack *stack)
 	int	j;
 	int	tmp;
 
+	i = 0;
 	arr_clone = malloc(stack->size * sizeof(int));
 	if (arr_clone == NULL)
 		return (0);
@@ -75,14 +85,8 @@ int	*find_position(t_stack *stack)
 	{
 		i = -1;
 		while (++i < stack->size)
-		{
 			if (arr_clone[j] < arr_clone[i])
-			{
-				tmp = arr_clone[j];
-				arr_clone[j] = arr_clone[i];
-				arr_clone[i] = tmp;
-			}
-		}
+				ft_swap_index(&arr_clone[j], &arr_clone[i]);
 	}
 	return (arr_clone);
 }
@@ -107,58 +111,4 @@ void	push_to_a(t_stack *a, t_stack *b)
 		if (b->top == -1)
 			break ;
 	}
-}
-
-void	sort_100(t_stack *stack_a, t_stack *stack_b)
-{
-	int	*arr_clone;
-	int	i;
-	int	j;
-
-	arr_clone = find_position(stack_a);
-	i = 0;
-	j = 0;
-	i = -1;
-	while (stack_a->top != 0)
-	{
-		i = i + stack_a->size / 5;
-		j = stack_a->top;
-		while (j)
-		{
-			if (indexof(arr_clone, stack_a->arr[stack_a->top]) <= i)
-				ft_pb(stack_a, stack_b);
-			else
-				ft_ra(stack_a);
-			j--;
-		}
-	}
-	ft_pb(stack_a, stack_b);
-	push_to_a(stack_a, stack_b);
-}
-
-void	ft_sort(t_stack *stack_a, t_stack *stack_b)
-{
-	int	*arr_clone;
-	int	i;
-	int	j;
-
-	arr_clone = find_position(stack_a);
-	i = 0;
-	j = 0;
-	i = -1;
-	while (stack_a->top != 0)
-	{
-		i = i + stack_a->size / 9;
-		j = stack_a->top;
-		while (j)
-		{
-			if (indexof(arr_clone, stack_a->arr[stack_a->top]) <= i)
-				ft_pb(stack_a, stack_b);
-			else
-				ft_ra(stack_a);
-			j--;
-		}
-	}
-	ft_pb(stack_a, stack_b);
-	push_to_a(stack_a, stack_b);
 }

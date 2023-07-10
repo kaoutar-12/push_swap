@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_sort.c                                       :+:      :+:    :+:   */
+/*   ft_sort2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/08 09:56:46 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/10 11:43:37 by kmouradi         ###   ########.fr       */
+/*   Created: 2023/07/10 08:44:56 by kmouradi          #+#    #+#             */
+/*   Updated: 2023/07/10 09:22:35 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	ft_check_sort_array(int *stack_a, int len_a)
+void	ft_sort2(t_stack *stack_a)
 {
-	int	i;
-
-	i = 0;
-	while (i < len_a - 1)
-	{
-		if (stack_a[i] > stack_a[i + 1])
-			return (1);
-		i++;
-	}
-	return (0);
+	if (stack_a->arr[stack_a->top] > stack_a->arr[stack_a->top - 1])
+		ft_sa(stack_a);
 }
