@@ -6,19 +6,35 @@
 #    By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 17:19:46 by kmouradi          #+#    #+#              #
-#    Updated: 2023/07/10 14:33:20 by kmouradi         ###   ########.fr        #
+#    Updated: 2023/07/10 21:01:58 by kmouradi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CN = rm -rf
-FLAGS = -Wall -Wextra -Werror -g
-SOURCE = push_swap.c parsing/check_dig.c parsing/check_sort.c parsing/dupicte.c parsing/join_arg.c \
-		instructions/ft_swap.c parsing/ft_fill.c instructions/ft_push.c instructions/ft_rev_rot.c instructions/ft_rot.c \
-		sorting/ft_sort3.c sorting/find_min.c sorting/ft_sort4.c sorting/ft_sort5.c sorting/ft_indexing.c \
-		parsing/parsing.c sorting/ft_sort100.c sorting/ft_sort500.c sorting/ft_sort2.c parsing/ft_check_intmax.c
-LIBFT_DIR = libft
-FTPRINTF_DIR = ft_printf
+FLAGS = -Wall -Wextra -Werror
+SOURCE = mandatory/push_swap.c\
+	mandatory/parsing/check_dig.c\
+	mandatory/parsing/dupicte.c\
+	mandatory/parsing/ft_fill.c\
+	mandatory/parsing/join_arg.c\
+	mandatory/parsing/check_sort.c\
+	mandatory/parsing/ft_check_intmax.c\
+	mandatory/parsing/ft_indexing.c\
+	mandatory/parsing/parsing.c\
+	mandatory/instructions/ft_push.c\
+	mandatory/instructions/ft_rev_rot.c\
+	mandatory/instructions/ft_rot.c\
+	mandatory/instructions/ft_swap.c\
+	mandatory/sorting/find_min.c\
+	mandatory/sorting/ft_sort100.c\
+	mandatory/sorting/ft_sort2.c\
+	mandatory/sorting/ft_sort3.c\
+	mandatory/sorting/ft_sort4.c\
+	mandatory/sorting/ft_sort5.c\
+	mandatory/sorting/ft_sort500.c
+LIBFT_DIR = mandatory/libft
+FTPRINTF_DIR = mandatory/ft_printf
 LIBFT = $(LIBFT_DIR)/libft.a
 FTPRINTF = $(FTPRINTF_DIR)/libftprintf.a
 OBJECT = $(SOURCE:.c=.o)
@@ -31,7 +47,7 @@ all: $(NAME)
 $(NAME): $(OBJECT) $(LIBFT) $(FTPRINTF)
 	$(CC) $(FLAGS) $(OBJECT) $(LIBFT) $(FTPRINTF) -o $(NAME)
 
-%.o: %.c push_swap.h
+%.o: %.c mandatory/push_swap.h
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
