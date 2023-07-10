@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 13:30:30 by kmouradi          #+#    #+#             */
-/*   Updated: 2022/12/29 09:49:32 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/10 19:09:15 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 size_t	ft_strlen( const char *s);
 char	*ft_strchr(const char *s, int c);
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoingnl(char *s1, char *s2);
 char	*get_next_line(int fd);
 char	*ft_strdup(const char *s1);
 #endif

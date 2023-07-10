@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 17:09:00 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/01/24 10:35:55 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/10 19:09:38 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	*to_read(char *txt, int fd)
 			return (NULL);
 		}
 		str[len] = '\0';
-		txt = ft_strjoin(txt, str);
+		txt = ft_strjoingnl(txt, str);
 	}
 	free (str);
 	return (txt);

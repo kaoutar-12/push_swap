@@ -6,13 +6,13 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 13:48:09 by kmouradi          #+#    #+#             */
-/*   Updated: 2022/12/28 11:28:21 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/10 19:09:24 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoingnl(char *s1, char *s2)
 {
 	char	*str;
 	int		i;

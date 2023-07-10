@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 17:23:24 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/10 18:01:11 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/10 19:08:20 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int	main(int ac, char **av)
 	int		i;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	char	*move;
 
 	if (ac >= 2)
 	{
@@ -69,9 +70,13 @@ int	main(int ac, char **av)
 		}
 		while(1)
 		{
-
+			move = get_next_line(0);
+			if (move == NULL)
+				break ;
+			check_move(stack_a, stack_b, move);
+			free(move);
 		}
-		if (ft_checker(stack_a) == 1)
+		if (ft_checker(stack_a) == 1 && is_empty(stack_b) == 1)
 			printf("OK\n");
 		else
 			printf("KO\n");
