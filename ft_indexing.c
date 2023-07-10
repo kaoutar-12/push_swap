@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 18:48:56 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/10 11:26:31 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/10 14:26:00 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,6 @@ int	findmax(t_stack *stack)
 		i--;
 	}
 	return (max);
-}
-
-void	ft_swap_index(int *a, int *b)
-{
-	int	tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
 }
 
 int	*find_position(t_stack *stack)

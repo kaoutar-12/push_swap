@@ -6,11 +6,20 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:41:19 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/10 11:51:35 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/10 14:26:20 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_swap_index(int *a, int *b)
+{
+	int	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
 
 void	print_error(void)
 {
@@ -51,53 +60,23 @@ int	*parsing(int ac, char **av, int *len_arr)
 	char	*str;
 	char	**split;
 
-	if (ac >= 2)
-	{
-		str = join_arg(ac, av);
-		split = ft_split(str, ' ');
-		free(str);
-		len_a = 0;
-		while (split[len_a] != NULL)
-		{
-			if (!check_if_only_dig(split[len_a]))
-			{
-				printf("Error1\n");
-				exit(1);
-			}
-			len_a++;
-		}
-		arr = malloc(sizeof(int) * len_a);
-		if (arr == NULL)
-			return (0);
-		i = 0;
-		while (split[i] != NULL)
-		{
-			arr[i] = ft_atoi(split[i]);
-			i++;
-		}
-		if (!ft_check_sort_array(arr, len_a))
-		{
-			printf("Error2\n");
-			exit(1);
-		}
-		if (!ft_check_double(arr, len_a))
-		{
-			printf("Error3\n");
-			exit(1);
-		}
-	}
-	else
-	{
-		printf("Error4\n");
-		exit(1);
-	}
+	str = join_arg(ac, av);
+	split = ft_split(str, ' ');
+	free(str);
+	len_a = -1;
+	while (split[++len_a] != NULL)
+		if (!check_if_only_dig(split[len_a])
+			|| !ft_check_intmax(split[len_a]))
+			print_error();
+	arr = malloc(sizeof(int) * len_a);
+	if (arr == NULL)
+		return (0);
+	i = -1;
+	while (split[++i] != NULL)
+		arr[i] = ft_atoi(split[i]);
+	if (!ft_check_double(arr, len_a) \
+	|| !ft_check_sort_array(arr, len_a))
+		print_error();
 	*len_arr = arr_len(split);
-		i = 0;
-	while (split[i])
-	{
-		free(split[i]);
-		i++;
-	}
-	free (split);
-	return (arr);
+	return (ft_free(split), arr);
 }
