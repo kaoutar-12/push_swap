@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/08 14:41:26 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/11 08:49:28 by kmouradi         ###   ########.fr       */
+/*   Created: 2023/07/10 20:26:17 by kmouradi          #+#    #+#             */
+/*   Updated: 2023/07/11 09:05:24 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_H
+# define CHECKER_H
+
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -19,6 +20,7 @@
 # include <ctype.h>
 # include <string.h>
 # include <limits.h>
+# include "gnl/get_next_line.h"
 # include "../libft/libft.h"
 # include "../ft_printf/ft_printf.h"
 
@@ -73,5 +75,7 @@ void	print_error(void);
 void	ft_ss(t_stack *stack_a, t_stack *stack_b);
 void	ft_rr(t_stack *stack_a, t_stack *stack_b);
 void	ft_rrr(t_stack *stack_a, t_stack *stack_b);
+int		ft_checker(t_stack *stack);
+void	check_move(t_stack *stack_a, t_stack *stack_b, char *move);
 
 #endif
