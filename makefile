@@ -6,13 +6,13 @@
 #    By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 17:19:46 by kmouradi          #+#    #+#              #
-#    Updated: 2023/07/11 09:13:47 by kmouradi         ###   ########.fr        #
+#    Updated: 2023/07/11 17:04:08 by kmouradi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CN = rm -rf
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror #-fsanitize=address
 SOURCE = mandatory/push_swap.c\
 	mandatory/parsing/check_dig.c\
 	mandatory/parsing/dupicte.c\

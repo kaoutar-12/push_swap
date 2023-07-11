@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 18:48:56 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/10 20:04:09 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/11 16:07:02 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	*find_position(t_stack *stack)
 	if (arr_clone == NULL)
 		return (0);
 	tmp = 0;
-	while (i <= stack->size)
+	while (i <= stack->size - 1)
 	{
 		arr_clone[i] = stack->arr[i];
 		i++;
