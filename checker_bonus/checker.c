@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 17:23:24 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/11 09:03:47 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/11 10:16:48 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_checker(t_stack *stack)
 {
-	int i;
+	int	i;
 
 	i = stack->top;
 	while (i > 0)
 	{
 		if (stack->arr[i] > stack->arr[i + 1])
-			return(1);
+			return (1);
 		i--;
 	}
 	return (0);
@@ -48,6 +48,20 @@ void	check_move(t_stack *stack_a, t_stack *stack_b, char *move)
 		print_error();
 }
 
+void	make_move(t_stack *stack_a, t_stack *stack_b)
+{
+	char	*move;
+
+	while (1)
+	{
+		move = get_next_line(0);
+		if (move == NULL)
+			break ;
+		check_move(stack_a, stack_b, move);
+		free(move);
+	}
+}
+
 int	main(int ac, char **av)
 {
 	int		len_arr;
@@ -55,7 +69,6 @@ int	main(int ac, char **av)
 	int		i;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	char	*move;
 
 	if (ac >= 2)
 	{
@@ -68,14 +81,7 @@ int	main(int ac, char **av)
 			fill_stack(stack_a, arr[i]);
 			i--;
 		}
-		while(1)
-		{
-			move = get_next_line(0);
-			if (move == NULL)
-				break ;
-			check_move(stack_a, stack_b, move);
-			free(move);
-		}
+		make_move(stack_a, stack_b);
 		if (ft_checker(stack_a) == 1 && is_empty(stack_b) == 1)
 			printf("OK\n");
 		else

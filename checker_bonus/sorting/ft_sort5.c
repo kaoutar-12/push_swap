@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 17:42:59 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/11 08:48:56 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/11 10:12:48 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,24 @@ void	find_min5(t_stack *stack_a, t_stack *stack_b)
 {
 	if (ft_find_min_value(stack_a) == stack_a->arr[stack_a->top])
 		ft_pb(stack_a, stack_b);
-	if (ft_find_min_value(stack_a) == stack_a->arr[stack_a->top - 1])
+	else if (ft_find_min_value(stack_a) == stack_a->arr[stack_a->top - 1])
 	{
 		ft_ra(stack_a);
 		ft_pb(stack_a, stack_b);
 	}
-	if (ft_find_min_value(stack_a) == stack_a->arr[stack_a->top - 2])
+	else if (ft_find_min_value(stack_a) == stack_a->arr[stack_a->top - 2])
 	{
 		ft_ra(stack_a);
 		ft_ra(stack_a);
 		ft_pb(stack_a, stack_b);
 	}
-	if (ft_find_min_value(stack_a) == stack_a->arr[stack_a->top - 3])
+	else if (ft_find_min_value(stack_a) == stack_a->arr[stack_a->top - 3])
 	{
 		ft_rra(stack_a);
 		ft_rra(stack_a);
 		ft_pb(stack_a, stack_b);
 	}
-	if (ft_find_min_value(stack_a) == stack_a->arr[stack_a->top - 4])
+	else if (ft_find_min_value(stack_a) == stack_a->arr[stack_a->top - 4])
 	{
 		ft_rra(stack_a);
 		ft_pb(stack_a, stack_b);

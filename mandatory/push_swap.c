@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 07:23:03 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/10 17:25:14 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/11 10:14:48 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,4 @@ int	main(int ac, char **av)
 	}
 	else
 		print_error();
-
 }
-
