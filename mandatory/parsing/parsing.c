@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:41:19 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/10 20:04:15 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/11 11:26:45 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,10 @@ int	*parsing(int ac, char **av, int *len_arr)
 	i = -1;
 	while (split[++i] != NULL)
 		arr[i] = ft_atoi(split[i]);
-	if (!ft_check_double(arr, len_a) \
-	|| !ft_check_sort_array(arr, len_a))
+	if (!ft_check_double(arr, len_a))
 		print_error();
+	if (!ft_check_sort_array(arr, len_a))
+		exit (1);
 	*len_arr = arr_len(split);
 	return (ft_free(split), arr);
 }

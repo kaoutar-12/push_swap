@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 17:23:24 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/11 10:16:48 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/11 11:00:58 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ void	check_move(t_stack *stack_a, t_stack *stack_b, char *move)
 		ft_rra(stack_a);
 	else if (ft_strcmp(move, "rrb\n") == 0)
 		ft_rrb(stack_b);
+	else if (ft_strcmp(move, "rrr\n") == 0)
+	{
+		ft_rra(stack_a);
+		ft_rrb(stack_b);
+	}
 	else if (ft_strcmp(move, "pa\n") == 0)
 		ft_pa(stack_b, stack_a);
 	else if (ft_strcmp(move, "pb\n") == 0)

@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 07:23:03 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/11 10:14:48 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/11 11:48:28 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ void	ft_sort(t_stack *stack_a, t_stack *stack_b)
 	free (stack_b);
 }
 
+void g(void)
+{
+	system("leaks push_swap");
+}
+
 int	main(int ac, char **av)
 {
 	int		len_arr;
@@ -40,6 +45,7 @@ int	main(int ac, char **av)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
+	// atexit(g);
 	if (ac >= 2)
 	{
 		arr = parsing(ac, av, &len_arr);
@@ -54,6 +60,6 @@ int	main(int ac, char **av)
 		ft_sort(stack_a, stack_b);
 		free(arr);
 	}
-	else
-		print_error();
+	// else
+	// 	print_error();
 }
