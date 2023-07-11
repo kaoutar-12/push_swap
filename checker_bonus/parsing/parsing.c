@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:41:19 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/11 11:04:47 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/11 14:30:55 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_swap_index(int *a, int *b)
 
 void	print_error(void)
 {
-	printf("Error\n");
+	write(2, "Error\n", 6);
 	exit(1);
 }
 

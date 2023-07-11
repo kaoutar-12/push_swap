@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 17:23:24 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/11 11:00:58 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/11 14:35:06 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ int	ft_checker(t_stack *stack)
 	while (i > 0)
 	{
 		if (stack->arr[i] > stack->arr[i + 1])
+		{
 			return (1);
+		}
 		i--;
 	}
 	return (0);
@@ -67,6 +69,14 @@ void	make_move(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
+void	ft_free_stack(t_stack *stack_a, t_stack *stack_b)
+{
+	free(stack_a->arr);
+	free(stack_a);
+	free(stack_b->arr);
+	free(stack_b);
+}
+
 int	main(int ac, char **av)
 {
 	int		len_arr;
@@ -88,8 +98,10 @@ int	main(int ac, char **av)
 		}
 		make_move(stack_a, stack_b);
 		if (ft_checker(stack_a) == 1 && is_empty(stack_b) == 1)
-			printf("OK\n");
+			ft_printf("OK\n");
 		else
-			printf("KO\n");
+			ft_printf("KO\n");
+		ft_free_stack(stack_a, stack_b);
+		free(arr);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 11:31:59 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/11 10:46:58 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/11 14:30:32 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 long long	ft_atoi(const char *str)
 {
 	long long	n;
-	long	i;
-	int		s;
-	long	x;
+	long		i;
+	int			s;
+	long		x;
 
 	i = 0;
 	s = 1;

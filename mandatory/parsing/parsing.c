@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:41:19 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/11 11:26:45 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/11 14:36:46 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_swap_index(int *a, int *b)
 
 void	print_error(void)
 {
-	printf("Error\n");
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
@@ -76,8 +76,6 @@ int	*parsing(int ac, char **av, int *len_arr)
 		arr[i] = ft_atoi(split[i]);
 	if (!ft_check_double(arr, len_a))
 		print_error();
-	if (!ft_check_sort_array(arr, len_a))
-		exit (1);
 	*len_arr = arr_len(split);
 	return (ft_free(split), arr);
 }
