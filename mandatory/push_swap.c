@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 07:23:03 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/11 17:16:31 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/12 09:28:08 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,6 @@ void	ft_sort(t_stack *stack_a, t_stack *stack_b)
 		ft_sort_100(stack_a, stack_b);
 	else if (stack_a->size > 100)
 		ft_sort500(stack_a, stack_b);
-	if (ft_check_sort_array(stack_a->arr, stack_a->size) && is_empty(stack_b))
-	{
-		printf("%d\n", stack_a->top);
-	}
 	free (stack_a->arr);
 	free (stack_a);
 	free (stack_b->arr);
