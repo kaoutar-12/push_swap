@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 07:28:29 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/11 08:49:02 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/12 13:24:23 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_sort500(t_stack *stack_a, t_stack *stack_b)
 	i = -1;
 	while (stack_a->top != 0)
 	{
-		i = i + stack_a->size / 9;
+		i = i + stack_a->size / 12;
 		j = stack_a->top;
 		while (j)
 		{

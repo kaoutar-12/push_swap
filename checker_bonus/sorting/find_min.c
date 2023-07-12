@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:16:07 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/12 12:16:39 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/12 14:45:31 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_find_min_indice(t_stack *stack)
 	return (ret);
 }
 
-int	ft_checker(t_stack *stack)
+ int	ft_checker(t_stack *stack)
 {
 	int	i;
 

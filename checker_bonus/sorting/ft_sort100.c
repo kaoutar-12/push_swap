@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 07:26:55 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/11 08:48:59 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/12 13:16:26 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	ft_sort_100(t_stack *stack_a, t_stack *stack_b)
 	int	j;
 
 	arr_clone = find_position(stack_a);
-	i = 0;
 	j = 0;
 	i = -1;
 	while (stack_a->top != 0)

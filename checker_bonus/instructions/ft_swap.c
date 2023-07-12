@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:32:52 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/12 10:08:54 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/12 14:27:39 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_swap(t_stack *stack)
 {
 	int	tmp;
 
-	if (stack->top >= 2)
+	if (stack->top >= 1)
 	{
 		tmp = stack->arr[stack->top];
 		stack->arr[stack->top] = stack->arr[stack->top - 1];
