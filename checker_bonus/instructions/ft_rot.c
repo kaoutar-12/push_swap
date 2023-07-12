@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 18:38:03 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/12 10:07:46 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/12 12:13:02 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_rot(t_stack *stack)
 	int	tmp;
 	int	i;
 
-	if(stack->top == -1)
+	if (stack->top == -1)
 		return ;
 	i = stack->top;
 	tmp = stack->arr[stack->top];

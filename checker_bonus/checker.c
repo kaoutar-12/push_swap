@@ -6,26 +6,25 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 17:23:24 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/07/12 10:11:27 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/07/12 13:01:18 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int	ft_checker(t_stack *stack)
+void	check_move1(t_stack *stack_a, t_stack *stack_b, char *move)
 {
-	int	i;
-
-	i = stack->top;
-	while (i > 0)
+	if (ft_strcmp(move, "rr\n") == 0)
 	{
-		if (stack->arr[i] > stack->arr[i - 1])
-		{
-			return (1);
-		}
-		i--;
+		ft_ra(stack_a);
+		ft_rb(stack_b);
 	}
-	return (0);
+	else if (ft_strcmp(move, "pa\n") == 0)
+		ft_pa(stack_b, stack_a);
+	else if (ft_strcmp(move, "pb\n") == 0)
+		ft_pb(stack_a, stack_b);
+	else
+		print_error();
 }
 
 void	check_move(t_stack *stack_a, t_stack *stack_b, char *move)
@@ -52,17 +51,8 @@ void	check_move(t_stack *stack_a, t_stack *stack_b, char *move)
 		ft_rra(stack_a);
 		ft_rrb(stack_b);
 	}
-	else if (ft_strcmp(move, "rr\n") == 0)
-	{
-		ft_ra(stack_a);
-		ft_rb(stack_b);
-	}
-	else if (ft_strcmp(move, "pa\n") == 0)
-		ft_pa(stack_b, stack_a);
-	else if (ft_strcmp(move, "pb\n") == 0)
-		ft_pb(stack_a, stack_b);
 	else
-		print_error();
+		check_move1(stack_a, stack_b, move);
 }
 
 void	make_move(t_stack *stack_a, t_stack *stack_b)
